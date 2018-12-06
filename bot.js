@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "+";
+var prefix = "$";
 
 client.on("message", message => {
 
@@ -24,7 +24,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$bc | $bco`,"http://twitch.tv/idk")
+client.user.setGame(`$bc | $obc | $ebc`,"http://twitch.tv/idk")
 client.user.setStatus("dnd")
 });
 
@@ -43,13 +43,13 @@ message.delete();
 });
 
 client.on('message', message => {
-    var prefix = "*";
+    var prefix = "$";
    
         if (message.author.id === client.user.id) return;
         if (message.guild) {
        let embed = new Discord.RichEmbed()
         let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc') {
+    if(message.content.split(' ')[0] == prefix + 'ebc') {
         if (!args[1]) {
     message.channel.send("*bc <message>");
     return;
@@ -72,4 +72,4 @@ client.on('message', message => {
 
 
 
-client.login("NTEyMzIwMDI0NzUzNDcxNDg5.Dtr4XQ.pXXA2nLHSwIIiPihn6sf-jLqFRg");
+client.login(process.env.BOT_TOKEN);
